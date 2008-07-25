@@ -1,0 +1,163 @@
+;; -*- scheme -*-
+; object definitions ...
+(define-object Box2D
+  (in-module "Clutter")
+  (parent "ClutterGroup")
+  (c-name "ClutterBox2D")
+  (gtype-id "CLUTTER_TYPE_BOX2_D")
+)
+
+(define-object Box2DActor
+  (in-module "Clutter")
+  (parent "ClutterChildMeta")
+  (c-name "ClutterBox2DActor")
+  (gtype-id "CLUTTER_TYPE_BOX2_DACTOR")
+)
+
+;; Enumerations and flags ...
+
+
+;; From clutter-box2d-actor.h
+
+(define-method get_actor
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_get_actor")
+  (return-type "ClutterBox2DActor*")
+  (parameters
+    '("ClutterActor*" "actor")
+  )
+)
+
+(define-function clutter_box2d_actor_get_type
+  (c-name "clutter_box2d_actor_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From clutter-box2d.h
+
+(define-function clutter_box2d_get_type
+  (c-name "clutter_box2d_get_type")
+  (return-type "GType")
+)
+
+(define-function clutter_box2d_new
+  (c-name "clutter_box2d_new")
+  (is-constructor-of "ClutterBox2D")
+  (return-type "ClutterActor*")
+)
+
+(define-method set_simulating
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_set_simulating")
+  (return-type "none")
+  (parameters
+    '("gboolean" "simulating")
+  )
+)
+
+(define-method get_simulating
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_get_simulating")
+  (return-type "gboolean")
+)
+
+
+
+;; From clutter-box2d-joint.h
+
+(define-method add_revolute_joint
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_add_revolute_joint")
+  (return-type "ClutterBox2DJoint*")
+  (parameters
+    '("ClutterActor*" "actor1")
+    '("ClutterActor*" "actor2")
+    '("const-ClutterVertex*" "anchor1")
+    '("const-ClutterVertex*" "anchor2")
+    '("gdouble" "reference_angle")
+  )
+)
+
+(define-method add_revolute_joint2
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_add_revolute_joint2")
+  (return-type "ClutterBox2DJoint*")
+  (parameters
+    '("ClutterActor*" "actor1")
+    '("ClutterActor*" "actor2")
+    '("const-ClutterVertex*" "anchor")
+  )
+)
+
+(define-method add_distance_joint
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_add_distance_joint")
+  (return-type "ClutterBox2DJoint*")
+  (parameters
+    '("ClutterActor*" "actor1")
+    '("ClutterActor*" "actor2")
+    '("const-ClutterVertex*" "anchor1")
+    '("const-ClutterVertex*" "anchor2")
+    '("gdouble" "length")
+    '("gdouble" "frequency")
+    '("gdouble" "damping_ratio")
+  )
+)
+
+(define-method add_prismatic_joint
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_add_prismatic_joint")
+  (return-type "ClutterBox2DJoint*")
+  (parameters
+    '("ClutterActor*" "actor1")
+    '("ClutterActor*" "actor2")
+    '("const-ClutterVertex*" "anchor1")
+    '("const-ClutterVertex*" "anchor2")
+    '("gdouble" "min_length")
+    '("gdouble" "max_length")
+    '("const-ClutterVertex*" "axis")
+  )
+)
+
+(define-method add_mouse_joint
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_add_mouse_joint")
+  (return-type "ClutterBox2DJoint*")
+  (parameters
+    '("ClutterActor*" "actor")
+    '("ClutterVertex*" "target")
+  )
+)
+
+(define-function clutter_box2d_mouse_joint_update_target
+  (c-name "clutter_box2d_mouse_joint_update_target")
+  (return-type "none")
+  (parameters
+    '("ClutterBox2DJoint*" "mouse_joint")
+    '("const-ClutterVertex*" "target")
+  )
+)
+
+(define-method destroy
+  (of-object "ClutterBox2DJoint")
+  (c-name "clutter_box2d_joint_destroy")
+  (return-type "none")
+)
+
+
+
+;; From clutter-box2d-util.h
+
+(define-function clutter_box2d_actor_track
+  (c-name "clutter_box2d_actor_track")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "actor")
+    '("ClutterActor*" "other")
+    '("ClutterBox2DTrackFlags" "flags")
+  )
+)
+
+

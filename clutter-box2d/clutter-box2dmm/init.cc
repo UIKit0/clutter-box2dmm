@@ -1,4 +1,6 @@
-/* Copyright (C) 1998-2006 The gtkmm Development Team
+// -*- c++ -*-
+/*
+ * Copyright 2008 cluttermm development team
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -15,19 +17,22 @@
  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include "glibmm_generate_extra_defs/generate_extra_defs.h"
-#include <clutter/clutter.h>
-#include <clutter-cairo/clutter-cairo.h>
-#include <iostream>
+#include <clutter-box2dmm-config.h> //For LIBCLUTTERMM_VERSION
+#include <clutter-box2dmm/wrap_init.h>
+#include <cluttermm/init.h>
 
-
-int main (int argc, char *argv[])
+namespace Clutter
 {
-  clutter_init(&argc, &argv) ;
 
-  std::cout 
-    << get_defs(CLUTTER_TYPE_CAIRO)
-    ;
+namespace Box2D
+{
 
-  return 0;
+void init(int* nargs, gchar **args[])
+{
+  Clutter::init(nargs, args);
+  wrap_init(); //Tells the Glib::wrap() table about the libclutter-box2dmm classes.
 }
+
+} //namespace Cairo
+
+} //namespace Clutter

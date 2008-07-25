@@ -1,0 +1,4 @@
+(include clutter-box2d_methods.defs)
+(include clutter-box2d_signals.defs)
+(include clutter-box2d_vfuncs.defs)
+(include clutter-box2d_enums.defs)

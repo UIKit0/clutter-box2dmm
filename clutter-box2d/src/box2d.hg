@@ -1,0 +1,54 @@
+/* Copyright (C) 2008 The cluttermm Development Team
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the Free
+ * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+
+#include <cluttermm/texture.h>
+#include <cairomm/context.h>
+ 
+_DEFS(clutter-cairomm,clutter-cairo)
+_PINCLUDE(cluttermm/private/texture_p.h)
+
+
+namespace Clutter
+{
+
+namespace Box2D
+{
+
+//TODO: Documentation.
+class Box2D :
+  public Clutter::Group
+{
+  _CLASS_GOBJECT(Box2D, ClutterBox2D, CLUTTER_BOX2D, Clutter::Group, ClutterGroup)
+
+protected:
+  _DEFAULT_CTOR()
+  _IGNORE(clutter_box2d_new)
+
+  _WRAP_CTOR(CairoTexture(guint surface_width, guint surface_height), clutter_cairo_new)
+
+public:
+  _WRAP_CREATE();
+
+  _WRAP_METHOD(void set_simulating(bool simulating = true), clutter_box2d_set_simulating)
+  _WRAP_METHOD(bool get_simulating() const, clutter_box2d_get_simulating)
+};
+
+} // namespace Cairo
+
+} // namespace Clutter
+
+//vim: ts=2,sw=2
