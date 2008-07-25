@@ -1,0 +1,191 @@
+;; From ClutterBox2D
+
+(define-property name
+  (of-object "ClutterBox2D")
+  (prop-type "GParamString")
+  (docs "Name of the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property x
+  (of-object "ClutterBox2D")
+  (prop-type "GParamInt")
+  (docs "X coordinate of the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property y
+  (of-object "ClutterBox2D")
+  (prop-type "GParamInt")
+  (docs "Y coordinate of the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property width
+  (of-object "ClutterBox2D")
+  (prop-type "GParamInt")
+  (docs "Width of the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property height
+  (of-object "ClutterBox2D")
+  (prop-type "GParamInt")
+  (docs "Height of the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property fixed-x
+  (of-object "ClutterBox2D")
+  (prop-type "ClutterParamSpecUnit")
+  (docs "Forced X position of the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property fixed-y
+  (of-object "ClutterBox2D")
+  (prop-type "ClutterParamSpecUnit")
+  (docs "Forced Y position of the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property fixed-position-set
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether to use fixed positioning for the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property min-width
+  (of-object "ClutterBox2D")
+  (prop-type "ClutterParamSpecUnit")
+  (docs "Forced minimum width request for the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property min-width-set
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether to use the min-width property")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property min-height
+  (of-object "ClutterBox2D")
+  (prop-type "ClutterParamSpecUnit")
+  (docs "Forced minimum height request for the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property min-height-set
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether to use the min-height property")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property natural-width
+  (of-object "ClutterBox2D")
+  (prop-type "ClutterParamSpecUnit")
+  (docs "Forced natural width request for the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property natural-width-set
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether to use the natural-width property")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property natural-height
+  (of-object "ClutterBox2D")
+  (prop-type "ClutterParamSpecUnit")
+  (docs "Forced natural height request for the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property natural-height-set
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether to use the natural-height property")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property request-mode
+  (of-object "ClutterBox2D")
+  (prop-type "GParamEnum")
+  (docs "The actor's request mode")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property allocation
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoxed")
+  (docs "The actor's allocation")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property depth
+  (of-object "ClutterBox2D")
+  (prop-type "GParamInt")
+  (docs "Depth of actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property clip
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoxed")
+  (docs "The clip region for the actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property has-clip
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether the actor has a clip set or not")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+

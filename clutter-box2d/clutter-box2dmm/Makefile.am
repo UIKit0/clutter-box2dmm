@@ -6,7 +6,7 @@ SUBDIRS = private
 sublib_name = clutter-box2dmm
 sublib_libname = clutter-box2dmm-$(API_VER)
 sublib_libversion = $(CLUTTER_BOX2DMM_SO_VERSION)
-sublib_namespace = Clutter
+sublib_namespace = Clutter Box2D
 sublib_cflags = $(CLUTTER_BOX2DMM_CFLAGS) -I$(top_srcdir)/clutter
 sublib_topdir = clutter-box2d
 

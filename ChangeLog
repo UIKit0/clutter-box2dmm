@@ -1,3 +1,11 @@
+2008-07-25  Murray Cumming  <murrayc@murrayc.com>
+
+	* clutter-box2d/src/clutter-box2d-docs.xml:
+	* clutter-box2d/src/clutter-box2d-docs_override.xml: Added root nodes, 
+	to avoid warnings. 
+	* clutter-box2d/src/clutter-box2d_enums.defs:
+	* clutter-box2d/src/clutter-box2d_signals.defs: Generated these.
+
 2008-07-25  Murray Cummin  <murrayc@murrayc.com>
 
 	* Added initial build structure, though something still is not 
