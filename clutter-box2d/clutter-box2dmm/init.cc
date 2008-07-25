@@ -33,6 +33,6 @@ void init(int* nargs, gchar **args[])
   wrap_init(); //Tells the Glib::wrap() table about the libclutter-box2dmm classes.
 }
 
-} //namespace Cairo
+} //namespace Box2D
 
 } //namespace Clutter

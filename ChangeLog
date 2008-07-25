@@ -1,5 +1,11 @@
 2008-07-25  Murray Cumming  <murrayc@murrayc.com>
 
+	* clutter-box2d/clutter-box2dmm/init.cc:
+	* clutter-box2d/src/box2d.hg:
+	* examples/Makefile.am_fragment: Removed more old clutter-cairo stuff.
+
+2008-07-25  Murray Cumming  <murrayc@murrayc.com>
+
 	* clutter-box2d/src/clutter-box2d-docs.xml:
 	* clutter-box2d/src/clutter-box2d-docs_override.xml: Added root nodes, 
 	to avoid warnings. 

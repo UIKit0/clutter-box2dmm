@@ -18,8 +18,8 @@
 #include <cluttermm/texture.h>
 #include <cairomm/context.h>
  
-_DEFS(clutter-cairomm,clutter-cairo)
-_PINCLUDE(cluttermm/private/texture_p.h)
+_DEFS(clutter-box2dmm,clutter-box2d)
+_PINCLUDE(cluttermm/private/group_p.h)
 
 
 namespace Clutter
@@ -37,8 +37,6 @@ class Box2D :
 protected:
   _DEFAULT_CTOR()
   _IGNORE(clutter_box2d_new)
-
-  _WRAP_CTOR(CairoTexture(guint surface_width, guint surface_height), clutter_cairo_new)
 
 public:
   _WRAP_CREATE();
