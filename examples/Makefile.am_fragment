@@ -1,0 +1,11 @@
+local_clutter_cairomm_libs = $(top_builddir)/clutter-cairo/clutter-cairomm/libclutter-cairomm-$(API_VER).la
+
+LIBS  = $(CLUTTER_CAIROMM_LIBS) $(local_clutter_cairomm_libs)
+
+all_includes = -I$(top_builddir)/clutter-cairo -I$(top_srcdir)/clutter-cairo \
+              $(CLUTTER_CAIROMM_CFLAGS)
+
+DEFS = @DEFS@
+DEFAULT_INCLUDES =
+INCLUDES = -I. -I$(srcdir) $(strip $(all_includes))
+
