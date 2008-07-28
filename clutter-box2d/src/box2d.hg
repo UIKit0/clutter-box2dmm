@@ -15,8 +15,7 @@
  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <cluttermm/texture.h>
-#include <cairomm/context.h>
+#include <cluttermm/group.h>
  
 _DEFS(clutter-box2dmm,clutter-box2d)
 _PINCLUDE(cluttermm/private/group_p.h)
@@ -35,17 +34,17 @@ class Box2D :
   _CLASS_GOBJECT(Box2D, ClutterBox2D, CLUTTER_BOX2D, Clutter::Group, ClutterGroup)
 
 protected:
-  _DEFAULT_CTOR()
+  _CTOR_DEFAULT
   _IGNORE(clutter_box2d_new)
 
 public:
-  _WRAP_CREATE();
+  _WRAP_CREATE()
 
   _WRAP_METHOD(void set_simulating(bool simulating = true), clutter_box2d_set_simulating)
   _WRAP_METHOD(bool get_simulating() const, clutter_box2d_get_simulating)
 };
 
-} // namespace Cairo
+} // namespace Box2D
 
 } // namespace Clutter
 

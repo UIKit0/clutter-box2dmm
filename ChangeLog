@@ -1,3 +1,12 @@
+2008-07-28  Siavash Safi  <siavash.safi@gmail.com>
+
+	* clutter-box2d/src/box2d.ccg: Added missing #include
+	* clutter-box2d/src/box2d.hg: Added missing #include, corrected MACROS
+	* clutter-box2d/src/clutter-box2d-docs.xml: Renamed to
+	clutter-box2d_docs.xml
+	* clutter-box2d/src/clutter-box2d-docs_override.xml: Renamed to
+	clutter-box2d_docs_override.xml
+
 2008-07-25  Murray Cumming  <murrayc@murrayc.com>
 
 	* clutter-box2d/clutter-box2dmm/init.cc:
