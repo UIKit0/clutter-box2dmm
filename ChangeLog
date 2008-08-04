@@ -1,3 +1,17 @@
+2008-08-04  Murray Cumming  <murrayc@murrayc.com>
+
+	* clutter-box2d/src/clutter-box2d_signals.defs: 
+	Update these, copy/pasting from the terminal because the crash 
+	in extra_defs_gen for this stops the file from being created fully with 
+	>.
+	* clutter-box2d/src/box2d.hg: Added gravity and simulating properties.
+	Added a note that you should use set_child_property().
+	* Makefile.am:
+	* configure.in:
+	* demo/Makefile.am:
+	* demo/main.cc: Very bare beginnings of a demo, based on the C demo.
+	There is nothing but skeleton code here now.
+
 2008-07-28  Siavash Safi  <siavash.safi@gmail.com>
 
 	* clutter-box2d/src/box2d.ccg: Added missing #include

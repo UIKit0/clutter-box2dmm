@@ -189,3 +189,147 @@
   (construct-only #f)
 )
 
+(define-property opacity
+  (of-object "ClutterBox2D")
+  (prop-type "GParamUChar")
+  (docs "Opacity of actor")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property visible
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether the actor is visible or not")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property reactive
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether the actor is reactive to events or not")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property scale-x
+  (of-object "ClutterBox2D")
+  (prop-type "GParamDouble")
+  (docs "Scale factor on the X axis")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property scale-y
+  (of-object "ClutterBox2D")
+  (prop-type "GParamDouble")
+  (docs "Scale factor on the Y axis")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property rotation-angle-x
+  (of-object "ClutterBox2D")
+  (prop-type "GParamDouble")
+  (docs "The rotation angle on the X axis")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property rotation-angle-y
+  (of-object "ClutterBox2D")
+  (prop-type "GParamDouble")
+  (docs "The rotation angle on the Y axis")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property rotation-angle-z
+  (of-object "ClutterBox2D")
+  (prop-type "GParamDouble")
+  (docs "The rotation angle on the Z axis")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property rotation-center-x
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoxed")
+  (docs "The rotation center on the X axis")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property rotation-center-y
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoxed")
+  (docs "The rotation center on the Y axis")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property rotation-center-z
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoxed")
+  (docs "The rotation center on the Z axis")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property anchor-x
+  (of-object "ClutterBox2D")
+  (prop-type "GParamInt")
+  (docs "X coordinate of the anchor point")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property anchor-y
+  (of-object "ClutterBox2D")
+  (prop-type "GParamInt")
+  (docs "Y coordinate of the anchor point")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property show-on-set-parent
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether the actor is shown when parented")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property gravity
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoxed")
+  (docs "The gravity of ")
+  (readable #f)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property simulating
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether ClutterBox2D is performing physical simulation or not.")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+

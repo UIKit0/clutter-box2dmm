@@ -1,4 +1,4 @@
-SUBDIRS		= tools clutter-box2d docs examples
+SUBDIRS		= tools clutter-box2d examples demo docs
 DIST_SUBDIRS	= $(SUBDIRS) scripts
 
 EXTRA_DIST	=  \

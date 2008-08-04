@@ -117,6 +117,7 @@ AC_OUTPUT([
   docs/reference/Makefile
     docs/reference/Doxyfile
 
+  demo/Makefile
   examples/Makefile
 ])
 :

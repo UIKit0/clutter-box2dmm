@@ -16,6 +16,7 @@
  */
 
 #include <cluttermm/group.h>
+#include <cluttermm/types.h> //For Clutter::Vertex.
  
 _DEFS(clutter-box2dmm,clutter-box2d)
 _PINCLUDE(cluttermm/private/group_p.h)
@@ -27,7 +28,9 @@ namespace Clutter
 namespace Box2D
 {
 
-//TODO: Documentation.
+/** TODO: Documentation.
+ * Use set_child_property() on the child actors.
+ */
 class Box2D :
   public Clutter::Group
 {
@@ -42,6 +45,9 @@ public:
 
   _WRAP_METHOD(void set_simulating(bool simulating = true), clutter_box2d_set_simulating)
   _WRAP_METHOD(bool get_simulating() const, clutter_box2d_get_simulating)
+
+  _WRAP_PROPERTY("gravity", Clutter::Vertex)
+  _WRAP_PROPERTY("simulating", bool)
 };
 
 } // namespace Box2D
