@@ -1,7 +1,6 @@
 SUBDIRS		= src clutter-box2dmm
 
-EXTRA_DIST	= README					\
-		  clutter-box2dmm-config.h.in clutter-box2dmm.h	\
+EXTRA_DIST	= clutter-box2dmm-config.h.in clutter-box2dmm.h	\
 		  clutter-box2dmm.pc.in
 
 cluttermm_includedir		= $(includedir)/clutter-box2dmm-$(API_VER)

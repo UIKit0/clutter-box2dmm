@@ -5,7 +5,7 @@ AC_INIT(clutter-box2d/clutter-box2dmm-config.h.in)
 #########################################################################
 CLUTTER_BOX2DMM_MAJOR_VERSION=0
 CLUTTER_BOX2DMM_MINOR_VERSION=7
-CLUTTER_BOX2DMM_MICRO_VERSION=2
+CLUTTER_BOX2DMM_MICRO_VERSION=3
 
 #
 # +1 : ? : +1  == new interface that does not break old one
@@ -117,7 +117,6 @@ AC_OUTPUT([
   docs/reference/Makefile
     docs/reference/Doxyfile
 
-  demo/Makefile
   examples/Makefile
     examples/bridge/Makefile
     examples/chain/Makefile
