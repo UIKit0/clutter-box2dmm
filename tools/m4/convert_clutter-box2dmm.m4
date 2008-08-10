@@ -3,6 +3,7 @@ _CONVERSION(`const Glib::RefPtr<ActorBox>&',`ClutterActorBox*',__CONVERT_REFPTR_
 
 _CONVERSION(`ClutterActor*',`Glib::RefPtr<Actor>',`Glib::wrap($3)')
 _CONVERSION(`ClutterActor*',`Glib::RefPtr<const Actor>',`Glib::wrap($3)')
+_CONVERSION(`const Glib::RefPtr<Clutter::Actor>&',`ClutterActor*',__CONVERT_REFPTR_TO_P)
 
 _CONVERSION(`const Glib::RefPtr<Shader>&',`ClutterShader*',__CONVERT_REFPTR_TO_P)
 _CONVERSION(`ClutterShader*',`Glib::RefPtr<Shader>', `Glib::wrap($3)')
@@ -69,3 +70,4 @@ _CONV_ENUM(Pango,EllipsizeMode)
 _CONV_ENUM(Pango,WrapMode)
 
 _CONVERSION(`const gchar*', `const Glib::ustring&',__GCHARP_TO_USTRING)
+

@@ -17,16 +17,18 @@
 
 #include <cluttermm/group.h>
 #include <cluttermm/types.h> //For Clutter::Vertex.
+#include <clutter-box2d/clutter-box2d-joint.h>
  
 _DEFS(clutter-box2dmm,clutter-box2d)
 _PINCLUDE(cluttermm/private/group_p.h)
-
 
 namespace Clutter
 {
 
 namespace Box2D
 {
+
+_WRAP_ENUM(Type, ClutterBox2DType, NO_GTYPE)
 
 /** TODO: Documentation.
  * Use set_child_property() on the child actors.
@@ -45,6 +47,35 @@ public:
 
   _WRAP_METHOD(void set_simulating(bool simulating = true), clutter_box2d_set_simulating)
   _WRAP_METHOD(bool get_simulating() const, clutter_box2d_get_simulating)
+
+  //TODO: Wrap ClutterBox2DJoint properly - ideally it would be a registered type, with hidden implementation.
+  _WRAP_METHOD(ClutterBox2DJoint* add_revolute_joint(const Glib::RefPtr<Clutter::Actor>& actor1,
+                                                     const Glib::RefPtr<Clutter::Actor>& actor2,
+                                                     const ClutterVertex *anchor1,
+                                                     const ClutterVertex *anchor2,
+                                                     double reference_angle), clutter_box2d_add_revolute_joint)
+
+
+  _WRAP_METHOD(ClutterBox2DJoint* add_revolute_joint2(const Glib::RefPtr<Clutter::Actor>& actor1,
+                                                      const Glib::RefPtr<Clutter::Actor>& actor2,
+                                                      const ClutterVertex *anchor), clutter_box2d_add_revolute_joint2)
+
+
+  _WRAP_METHOD(ClutterBox2DJoint* add_distance_joint(const Glib::RefPtr<Clutter::Actor>& actor1,
+                                                     const Glib::RefPtr<Clutter::Actor>& actor2,
+                                                     const ClutterVertex *anchor1,
+                                                     const ClutterVertex *anchor2,
+                                                     double length, double frequency, double damping_ratio), clutter_box2d_add_distance_joint)
+
+
+  _WRAP_METHOD(ClutterBox2DJoint* add_prismatic_joint(const Glib::RefPtr<Clutter::Actor>& actor1,
+                                                      const Glib::RefPtr<Clutter::Actor>& actor2,
+                                                      const ClutterVertex *anchor1,
+                                                      const ClutterVertex *anchor2,
+                                                      double min_length, double max_length, const ClutterVertex *axis), clutter_box2d_add_prismatic_joint)
+
+
+  _WRAP_METHOD(ClutterBox2DJoint* add_mouse_joint(const Glib::RefPtr<Clutter::Actor>& actor, ClutterVertex    *target), clutter_box2d_add_mouse_joint)
 
   _WRAP_PROPERTY("gravity", Clutter::Vertex)
   _WRAP_PROPERTY("simulating", bool)

@@ -1,3 +1,14 @@
+2008-08-10  Murray Cumming  <murrayc@murrayc.com>
+
+	* clutter-box2d/clutter-box2dmm.h: Added an include for box2d.h.
+	* clutter-box2d/src/box2d.hg: Added wrappers for the weird joint 
+	functoins, though this must be done properly.
+	* configure.in:
+	* examples/Makefile.am:
+	* examples/bridge/Makefile.am:
+	* examples/bridge/main.cc: Added a first working example, based on 
+	the first part of the C example.
+
 2008-08-04  Murray Cumming  <murrayc@murrayc.com>
 
 	* clutter-box2d/src/clutter-box2d_signals.defs: 

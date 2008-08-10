@@ -119,5 +119,6 @@ AC_OUTPUT([
 
   demo/Makefile
   examples/Makefile
+    examples/bridge/Makefile
 ])
 :
