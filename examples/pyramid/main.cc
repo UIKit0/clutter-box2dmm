@@ -62,43 +62,27 @@ int main(int argc, char *argv[])
 
   add_cage(box2d, true /* roof */);
 
-  const int y = stage->get_height() / 2;
-  int num_planks = stage->get_width() / 20 - 2;
-  Glib::RefPtr<Clutter::Rectangle> rect = Clutter::Rectangle::create();
-  rect->set_size(18, 5);
-  rect->set_position(10, y);
-  box2d->add_actor(rect);
+  const int pyramid_rows = (stage->get_width() / 64)-1;
 
-  box2d->set_child_property(rect, "mode", (int)Clutter::Box2D::BOX2D_STATIC);  //TODO: Avoid the need for the int cast.
-
-  Glib::RefPtr<Clutter::Actor> prev_actor = rect;
-
-  for(int i = 0; i < num_planks; ++i)
+  for(int row = 0; row < pyramid_rows; ++row)
   {
-    Glib::RefPtr<Clutter::Rectangle> box = Clutter::Rectangle::create();
-    box->set_size(18, 5);
-    box->set_position(20 + 20 * i, y);
-    box2d->add_actor(box);
+    const int count = pyramid_rows - row + 1;
+    const int y = 420 - (row + 1) * 120;
 
-    box2d->set_child_property(box, "manipulatable", true);
-    box2d->set_child_property(box, "mode", (int)Clutter::Box2D::BOX2D_DYNAMIC);
+    for(int i = 0; i < count; ++i)
+    {
+      const int x = (stage->get_width() / 2) - (count * 64 / 2) + i * 64;
+      
+      Glib::RefPtr<Clutter::Texture> texture = Clutter::Texture::create();
+      texture->set_from_file("redhand.png");
+      box2d->add_actor(texture);
+      texture->set_opacity(1.0 * 255);
+      texture->set_position(x, y);
 
-    ClutterVertex anchor = { CLUTTER_UNITS_FROM_FLOAT (20 + 20 * i), CLUTTER_UNITS_FROM_FLOAT (y) };
-    box2d->add_revolute_joint2(prev_actor, box, &anchor);
-   
-    prev_actor = box;
+      box2d->set_child_property(texture, "manipulatable", true);
+      box2d->set_child_property(texture, "mode", (int)Clutter::Box2D::BOX2D_DYNAMIC);
+    }
   }
-
-  Glib::RefPtr<Clutter::Rectangle> box = Clutter::Rectangle::create();
-  box->set_size(18, 5);
-  box->set_position(20 + 20 * num_planks, y);
-  box2d->add_actor(box);
-
-  box2d->set_child_property(box, "mode", (int)Clutter::Box2D::BOX2D_STATIC);
-
-  ClutterVertex anchor = { CLUTTER_UNITS_FROM_FLOAT (20 + 20 * num_planks),
-             CLUTTER_UNITS_FROM_FLOAT (y) };
-  box2d->add_revolute_joint2(prev_actor, box, &anchor);
 
   box2d->set_simulating();
 

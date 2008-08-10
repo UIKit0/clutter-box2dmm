@@ -120,5 +120,9 @@ AC_OUTPUT([
   demo/Makefile
   examples/Makefile
     examples/bridge/Makefile
+    examples/chain/Makefile
+    examples/pyramid/Makefile
+    examples/slides/Makefile
+    examples/table/Makefile
 ])
 :

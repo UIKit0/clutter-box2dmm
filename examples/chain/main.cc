@@ -55,50 +55,42 @@ int main(int argc, char *argv[])
   stage->set_size(800, 600);
   stage->set_title("Clutter::Box2D Example");
 
-
   Glib::RefPtr<Clutter::Box2D::Box2D> box2d = Clutter::Box2D::Box2D::create();
   stage->add_actor(box2d);
   
 
   add_cage(box2d, true /* roof */);
 
-  const int y = stage->get_height() / 2;
-  int num_planks = stage->get_width() / 20 - 2;
+  int y = 50;
+  const int num_links = stage->get_height() / 20 - 2;
+  if((stage->get_width() / 20) < num_links)
+    num_links = stage->get_width() / 20;
+
   Glib::RefPtr<Clutter::Rectangle> rect = Clutter::Rectangle::create();
   rect->set_size(18, 5);
-  rect->set_position(10, y);
+  rect->set_position(stage->get_width() / 2, y);
   box2d->add_actor(rect);
 
   box2d->set_child_property(rect, "mode", (int)Clutter::Box2D::BOX2D_STATIC);  //TODO: Avoid the need for the int cast.
 
   Glib::RefPtr<Clutter::Actor> prev_actor = rect;
 
-  for(int i = 0; i < num_planks; ++i)
+  for(int i = 0; i < num_links; ++i)
   {
     Glib::RefPtr<Clutter::Rectangle> box = Clutter::Rectangle::create();
     box->set_size(18, 5);
-    box->set_position(20 + 20 * i, y);
+    box->set_position(20 + 20 * i, y+=1);
     box2d->add_actor(box);
 
     box2d->set_child_property(box, "manipulatable", true);
     box2d->set_child_property(box, "mode", (int)Clutter::Box2D::BOX2D_DYNAMIC);
 
-    ClutterVertex anchor = { CLUTTER_UNITS_FROM_FLOAT (20 + 20 * i), CLUTTER_UNITS_FROM_FLOAT (y) };
-    box2d->add_revolute_joint2(prev_actor, box, &anchor);
+    ClutterVertex anchor1 = { CLUTTER_UNITS_FROM_FLOAT (18), CLUTTER_UNITS_FROM_FLOAT (0.0) };
+    ClutterVertex anchor2 = { CLUTTER_UNITS_FROM_FLOAT (0.0), CLUTTER_UNITS_FROM_FLOAT (0.0) };
+    box2d->add_revolute_joint(prev_actor, box, &anchor1, &anchor2, 0.0);
    
     prev_actor = box;
   }
-
-  Glib::RefPtr<Clutter::Rectangle> box = Clutter::Rectangle::create();
-  box->set_size(18, 5);
-  box->set_position(20 + 20 * num_planks, y);
-  box2d->add_actor(box);
-
-  box2d->set_child_property(box, "mode", (int)Clutter::Box2D::BOX2D_STATIC);
-
-  ClutterVertex anchor = { CLUTTER_UNITS_FROM_FLOAT (20 + 20 * num_planks),
-             CLUTTER_UNITS_FROM_FLOAT (y) };
-  box2d->add_revolute_joint2(prev_actor, box, &anchor);
 
   box2d->set_simulating();
 

@@ -1,3 +1,3 @@
-SUBDIRS = bridge
+SUBDIRS = bridge chain pyramid slides table
 
 
