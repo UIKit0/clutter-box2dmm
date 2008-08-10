@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
       const int x = (stage->get_width() / 2) - (count * 64 / 2) + i * 64;
       
       Glib::RefPtr<Clutter::Texture> texture = Clutter::Texture::create();
-      texture->set_from_file("redhand.png");
+      texture->set_from_file("gnome_logo.png");
       box2d->add_actor(texture);
       texture->set_opacity(1.0 * 255);
       texture->set_position(x, y);
