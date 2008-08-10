@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
     box2d->set_child_property(box, "mode", (int)Clutter::Box2D::BOX2D_DYNAMIC);
 
     ClutterVertex anchor = { CLUTTER_UNITS_FROM_FLOAT (20 + 20 * i), CLUTTER_UNITS_FROM_FLOAT (y) };
-    box2d->add_revolute_joint2(prev_actor, box, &anchor);
+    box2d->add_revolute_joint(prev_actor, box, &anchor);
    
     prev_actor = box;
   }
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 
   ClutterVertex anchor = { CLUTTER_UNITS_FROM_FLOAT (20 + 20 * num_planks),
              CLUTTER_UNITS_FROM_FLOAT (y) };
-  box2d->add_revolute_joint2(prev_actor, box, &anchor);
+  box2d->add_revolute_joint(prev_actor, box, &anchor);
 
   box2d->set_simulating();
 

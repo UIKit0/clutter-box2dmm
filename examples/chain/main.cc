@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
   add_cage(box2d, true /* roof */);
 
   int y = 50;
-  const int num_links = stage->get_height() / 20 - 2;
+  int num_links = stage->get_height() / 20 - 2;
   if((stage->get_width() / 20) < num_links)
     num_links = stage->get_width() / 20;
 

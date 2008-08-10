@@ -1,5 +1,12 @@
 2008-08-10  Murray Cumming  <murrayc@murrayc.com>
 
+	* clutter-box2d/src/box2d.hg: Rename add_revolute_joint2() to 
+	be a add_revolute_joint() overload.
+	* examples/bridge/main.cc:
+	* examples/chain/main.cc: Adapted.
+
+2008-08-10  Murray Cumming  <murrayc@murrayc.com>
+
 	* examples/: Replace the ohand logos with GNOME logos.
 
 2008-08-10  Murray Cumming  <murrayc@murrayc.com>
