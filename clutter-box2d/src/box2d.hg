@@ -60,7 +60,7 @@ public:
                                                      const Glib::RefPtr<Clutter::Actor>& actor2,
                                                      const Clutter::Vertex& anchor1,
                                                      const Clutter::Vertex& anchor2,
-                                                     double length, double frequency, double damping_ratio), clutter_box2d_add_distance_joint)
+                                                     double length, double frequency = 0.0, double damping_ratio = 0.0), clutter_box2d_add_distance_joint)
 
 
   _WRAP_METHOD(ClutterBox2DJoint* add_prismatic_joint(const Glib::RefPtr<Clutter::Actor>& actor1,

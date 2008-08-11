@@ -1,5 +1,13 @@
 2008-08-11  Murray Cumming  <murrayc@murrayc.com>
 
+	* clutter-box2d/src/box2d.hg: add_distance_joint(): Added default values.
+
+	* configure.in:
+	* examples/Makefile.am:
+	* examples/distance_joint/: Added a simple example of a distance joint.
+
+2008-08-11  Murray Cumming  <murrayc@murrayc.com>
+
 	* tools/m4/convert_clutter-box2dmm.m4:
 	* clutter-box2d/src/box2d.ccg:
 	* clutter-box2d/src/box2d.hg: Added explicit get/set_child_*() 

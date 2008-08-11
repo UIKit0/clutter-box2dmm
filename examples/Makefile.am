@@ -1,3 +1,3 @@
-SUBDIRS = bridge chain pyramid slides table revolute_joint
+SUBDIRS = bridge chain pyramid slides table distance_joint
 
 

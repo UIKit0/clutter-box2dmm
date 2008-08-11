@@ -41,15 +41,18 @@ int main(int argc, char *argv[])
   texture->set_from_file("gnome_logo.png");
   box2d->add_actor(texture);
   texture->set_opacity(1.0 * 255);
-  texture->set_position(50, 50);
+  texture->set_position(stage->get_width() / 2, 0); //It will be placed closer to the rect by the distance joint.
   box2d->set_child_mode(texture, Clutter::Box2D::BOX2D_DYNAMIC); //It moves.
   box2d->set_child_manipulatable(texture); //It can be moved with the mouse.
   
-  //Add a joint:
-  Clutter::Vertex anchor1( CLUTTER_UNITS_FROM_FLOAT (rect->get_width()/2), CLUTTER_UNITS_FROM_FLOAT (rect->get_height()/2), 0 );
-  Clutter::Vertex anchor2( CLUTTER_UNITS_FROM_FLOAT (texture->get_width()/2), CLUTTER_UNITS_FROM_FLOAT (texture->get_height()/2), 0);
-  box2d->add_distance_joint(rect, texture, anchor1, anchor2, 100.0);
+  //Add a distance joint, with points in the middle of each actor.
+  //The dynamic actor will then move in a circle around the static one,
+  //when manipulated with the mouse:
+  Clutter::Vertex anchor1( CLUTTER_UNITS_FROM_FLOAT(rect->get_width()/2), CLUTTER_UNITS_FROM_FLOAT(rect->get_height()/2), 0 );
+  Clutter::Vertex anchor2( CLUTTER_UNITS_FROM_FLOAT(texture->get_width()/2), CLUTTER_UNITS_FROM_FLOAT(texture->get_height()/2), 0);
+  box2d->add_distance_joint(rect, texture, anchor1, anchor2, 200.0);
 
+  box2d->property_gravity() = Clutter::Vertex(0, 0, 0);
   box2d->set_simulating();
 
   stage->show();

@@ -123,5 +123,6 @@ AC_OUTPUT([
     examples/pyramid/Makefile
     examples/slides/Makefile
     examples/table/Makefile
+    examples/distance_joint/Makefile
 ])
 :
