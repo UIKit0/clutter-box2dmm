@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
   Glib::RefPtr<Clutter::Stage> stage = Clutter::Stage::get_default();
   stage->set_color( Clutter::Color(0x00, 0x00, 0x00, 0xff) );
-  stage->set_size(800, 600);
+  stage->set_size(500, 500);
   stage->set_title("Clutter::Box2D Example");
 
 
