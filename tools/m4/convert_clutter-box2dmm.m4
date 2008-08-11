@@ -71,3 +71,6 @@ _CONV_ENUM(Pango,WrapMode)
 
 _CONVERSION(`const gchar*', `const Glib::ustring&',__GCHARP_TO_USTRING)
 
+_CONVERSION(`const Clutter::Vertex&', `const ClutterVertex*', `($3).gobj()')
+
+

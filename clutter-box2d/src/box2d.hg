@@ -49,16 +49,17 @@ public:
   _WRAP_METHOD(bool get_simulating() const, clutter_box2d_get_simulating)
 
   //TODO: Wrap ClutterBox2DJoint properly - ideally it would be a registered type, with hidden implementation.
-  _WRAP_METHOD(ClutterBox2DJoint* add_revolute_joint(const Glib::RefPtr<Clutter::Actor>& actor1, const Glib::RefPtr<Clutter::Actor>& actor2, const ClutterVertex* anchor1, const ClutterVertex* anchor2, double reference_angle), clutter_box2d_add_revolute_joint)
+
+  _WRAP_METHOD(ClutterBox2DJoint* add_revolute_joint(const Glib::RefPtr<Clutter::Actor>& actor1, const Glib::RefPtr<Clutter::Actor>& actor2, const Clutter::Vertex& anchor1, const Clutter::Vertex& anchor2, double reference_angle), clutter_box2d_add_revolute_joint)
 
 
-  _WRAP_METHOD(ClutterBox2DJoint* add_revolute_joint(const Glib::RefPtr<Clutter::Actor>& actor1, const Glib::RefPtr<Clutter::Actor>& actor2, const ClutterVertex *anchor), clutter_box2d_add_revolute_joint2)
+  _WRAP_METHOD(ClutterBox2DJoint* add_revolute_joint(const Glib::RefPtr<Clutter::Actor>& actor1, const Glib::RefPtr<Clutter::Actor>& actor2, const Clutter::Vertex& anchor), clutter_box2d_add_revolute_joint2)
 
 
   _WRAP_METHOD(ClutterBox2DJoint* add_distance_joint(const Glib::RefPtr<Clutter::Actor>& actor1,
                                                      const Glib::RefPtr<Clutter::Actor>& actor2,
-                                                     const ClutterVertex* anchor1,
-                                                     const ClutterVertex* anchor2,
+                                                     const Clutter::Vertex& anchor1,
+                                                     const Clutter::Vertex& anchor2,
                                                      double length, double frequency, double damping_ratio), clutter_box2d_add_distance_joint)
 
 
@@ -66,10 +67,28 @@ public:
                                                       const Glib::RefPtr<Clutter::Actor>& actor2,
                                                       const ClutterVertex *anchor1,
                                                       const ClutterVertex *anchor2,
-                                                      double min_length, double max_length, const ClutterVertex* axis), clutter_box2d_add_prismatic_joint)
+                                                      double min_length, double max_length,  const Clutter::Vertex& axis), clutter_box2d_add_prismatic_joint)
 
 
-  _WRAP_METHOD(ClutterBox2DJoint* add_mouse_joint(const Glib::RefPtr<Clutter::Actor>& actor, ClutterVertex    *target), clutter_box2d_add_mouse_joint)
+//TODO: Remove this conversion when the C API has been fixed. See http://bugzilla.o-hand.com/show_bug.cgi?id=1095
+#m4 _CONVERSION(`const Clutter::Vertex&', `ClutterVertex*', `const_cast<Clutter::Vertex&>($3).gobj()')
+  _WRAP_METHOD(ClutterBox2DJoint* add_mouse_joint(const Glib::RefPtr<Clutter::Actor>& actor, const Clutter::Vertex& target), clutter_box2d_add_mouse_joint)
+
+
+  void set_child_linear_velocity(const Glib::RefPtr<Clutter::Actor>& actor, const Clutter::Vertex& linear_velocity);
+  Clutter::Vertex get_child_linear_velocity(const Glib::RefPtr<const Clutter::Actor>& actor) const;
+
+  void set_child_angular_velocity(const Glib::RefPtr<Clutter::Actor>& actor, const Clutter::Vertex& angular_velocity);
+  Clutter::Vertex get_child_angular_velocity(const Glib::RefPtr<const Clutter::Actor>& actor) const;
+
+  void set_child_is_bullet(const Glib::RefPtr<Clutter::Actor>& actor, bool is_bullet = true);
+  bool get_child_is_bullet(const Glib::RefPtr<const Clutter::Actor>& actor) const;
+
+  void set_child_mode(const Glib::RefPtr<Clutter::Actor>& actor, Type mode);
+  Type get_child_mode(const Glib::RefPtr<const Clutter::Actor>& actor) const;
+
+  void set_child_manipulatable(const Glib::RefPtr<Clutter::Actor>& actor, bool manipulatable = true);
+  bool get_child_manipulatable(const Glib::RefPtr<const Clutter::Actor>& actor) const;
 
   _WRAP_PROPERTY("gravity", Clutter::Vertex)
   _WRAP_PROPERTY("simulating", bool)

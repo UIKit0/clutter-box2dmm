@@ -3,33 +3,33 @@
 #include <iostream>
 
 static void
-add_static_box(const Glib::RefPtr<Clutter::Container>& group,
+add_static_box(const Glib::RefPtr<Clutter::Box2D::Box2D>& box2d,
                 int x, int y, int width, int height)
 {
   Glib::RefPtr<Clutter::Rectangle> rect = Clutter::Rectangle::create();
   rect->set_size(width, height);
   rect->set_position(x, y);
-  group->add_actor(rect);
 
-  group->set_child_property(rect, "mode", (int)Clutter::Box2D::BOX2D_STATIC);
+  box2d->add_actor(rect);
+  box2d->set_child_mode(rect, Clutter::Box2D::BOX2D_STATIC);
 }
 
 void
-add_cage (const Glib::RefPtr<Clutter::Container>& group, bool roof)
+add_cage(const Glib::RefPtr<Clutter::Box2D::Box2D>& box2d, bool roof)
 {
   Glib::RefPtr<Clutter::Stage> stage = Clutter::Stage::get_default(); //TODO: There could be more than one stage.
-  int width = stage->get_width();
-  int height = stage->get_height();
+  const int width = stage->get_width();
+  const int height = stage->get_height();
 
   if(roof)
-    add_static_box(group, -100, -100, width + 200, 100);
+    add_static_box(box2d, -100, -100, width + 200, 100);
   else
-    add_static_box(group, -100, -height*(3-1)-100, width + 200, 100);
+    add_static_box(box2d, -100, -height*(3-1)-100, width + 200, 100);
  
-  add_static_box(group, -100, height, width + 200, 100);
+  add_static_box(box2d, -100, height, width + 200, 100);
 
-  add_static_box(group, -100, -(height*(5-1)) , 100, height * 5);
-  add_static_box(group, width, -(height*(5-1)) , 100, height * 5);
+  add_static_box(box2d, -100, -(height*(5-1)) , 100, height * 5);
+  add_static_box(box2d, width, -(height*(5-1)) , 100, height * 5);
 }
 
 
@@ -68,14 +68,14 @@ int main(int argc, char *argv[])
   ground1->set_position(0, 310);
   ground1->set_rotation(Clutter::Z_AXIS, 30.0, 128, 16, 0);
   box2d->add_actor(ground1);
-  box2d->set_child_property(ground1, "mode", (int)Clutter::Box2D::BOX2D_STATIC);  //TODO: Avoid the need for the int cast.
+  box2d->set_child_mode(ground1, Clutter::Box2D::BOX2D_STATIC);
 
   Glib::RefPtr<Clutter::Rectangle> ground2 = Clutter::Rectangle::create();
   ground2->set_size(256, 3);
   ground2->set_position(200, 200);
   ground2->set_rotation(Clutter::Z_AXIS, -30.0, 0, 0, 0);
   box2d->add_actor(ground2);
-  box2d->set_child_property(ground2, "mode", (int)Clutter::Box2D::BOX2D_STATIC);  //TODO: Avoid the need for the int cast.
+  box2d->set_child_mode(ground2, Clutter::Box2D::BOX2D_STATIC);
 
 
   for(int i = 0; i < 20; ++i)
@@ -89,8 +89,8 @@ int main(int argc, char *argv[])
     texture->set_opacity(1.0 * 255);
     texture->set_position(x, y);
 
-    box2d->set_child_property(texture, "manipulatable", true);
-    box2d->set_child_property(texture, "mode", (int)Clutter::Box2D::BOX2D_DYNAMIC);
+    box2d->set_child_manipulatable(texture);
+    box2d->set_child_mode(texture, Clutter::Box2D::BOX2D_DYNAMIC);
   }
 
   box2d->set_reactive();

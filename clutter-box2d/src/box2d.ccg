@@ -1,1 +1,88 @@
+/* Copyright (C) 2008 The cluttermm Development Team
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the Free
+ * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+
 #include <clutter-box2d/clutter-box2d.h>
+
+namespace Clutter
+{
+namespace Box2D
+{
+
+void Box2D::set_child_linear_velocity(const Glib::RefPtr<Clutter::Actor>& actor, const Clutter::Vertex& linear_velocity)
+{
+  set_child_property(actor, "linear-velocity", linear_velocity);
+}
+
+Clutter::Vertex Box2D::get_child_linear_velocity(const Glib::RefPtr<const Clutter::Actor>& actor) const
+{
+  Clutter::Vertex linear_velocity;
+  get_child_property(actor, "angular-velocity", linear_velocity);
+  return linear_velocity;
+}
+
+void Box2D::set_child_angular_velocity(const Glib::RefPtr<Clutter::Actor>& actor, const Clutter::Vertex& angular_velocity)
+{
+  set_child_property(actor, "angular-velocity", angular_velocity);
+}
+
+Clutter::Vertex Box2D::get_child_angular_velocity(const Glib::RefPtr<const Clutter::Actor>& actor) const
+{
+  Clutter::Vertex angular_velocity;
+  get_child_property(actor, "angular-velocity", angular_velocity);
+  return angular_velocity;
+}
+
+void Box2D::set_child_is_bullet(const Glib::RefPtr<Clutter::Actor>& actor, bool is_bullet)
+{
+  set_child_property(actor, "is-bullet", is_bullet); 
+}
+
+bool Box2D::get_child_is_bullet(const Glib::RefPtr<const Clutter::Actor>& actor) const
+{
+  bool is_bullet = false;
+  get_child_property(actor, "is-bullet", is_bullet);
+  return is_bullet;
+}
+
+void Box2D::set_child_mode(const Glib::RefPtr<Clutter::Actor>& actor, Type mode)
+{
+  set_child_property(actor, "mode", (int)mode);  //TODO: Avoid the need for the int cast. 
+}
+
+Type Box2D::get_child_mode(const Glib::RefPtr<const Clutter::Actor>& actor) const
+{
+  Type mode = BOX2D_NONE;
+  get_child_property(actor, "mode", mode);
+  return mode;
+}
+
+void Box2D::set_child_manipulatable(const Glib::RefPtr<Clutter::Actor>& actor, bool manipulatable)
+{
+  set_child_property(actor, "manipulatable", manipulatable); 
+}
+
+bool Box2D::get_child_manipulatable(const Glib::RefPtr<const Clutter::Actor>& actor) const
+{
+  bool manipulatable = false;
+  get_child_property(actor, "manipulatable", manipulatable);
+  return manipulatable;
+}
+
+} //namespace Box2D
+
+} //namespace Clutter
+
