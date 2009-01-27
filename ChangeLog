@@ -1,3 +1,9 @@
+2009-01-24  Deng Xiyue  <manphiz@gmail.com>
+
+	* Change license header to mention Lesser General Public License
+	version 2.1 instead of Library General Public License, to be
+	consistent with COPYING.
+
 2008-08-11  Murray Cumming  <murrayc@murrayc.com>
 
 	* clutter-box2d/src/box2d.hg: add_distance_joint(): Added default values.
