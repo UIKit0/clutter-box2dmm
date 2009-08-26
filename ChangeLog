@@ -1,3 +1,14 @@
+2009-08-26  Murray Cumming  <murrayc@murrayc.com>
+
+	Use clutter-box2d-0.10.
+	
+	* clutter-box2d/clutter-box2dmm.pc.in:
+	* configure.in: Use clutter-box2d-0.10 rather than clutter-box2d-0.8.
+	* examples/bridge/main.cc:
+	* examples/chain/main.cc:
+	* examples/distance_joint/main.cc: Remove uses of CLUTTER_UNITS_FROM_FLOAT, 
+	as in clutter-box2d itself.
+
 2009-01-24  Deng Xiyue  <manphiz@gmail.com>
 
 	* Change license header to mention Lesser General Public License

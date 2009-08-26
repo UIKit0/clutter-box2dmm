@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
   //Add a distance joint, with points in the middle of each actor.
   //The dynamic actor will then move in a circle around the static one,
   //when manipulated with the mouse:
-  Clutter::Vertex anchor1( CLUTTER_UNITS_FROM_FLOAT(rect->get_width()/2), CLUTTER_UNITS_FROM_FLOAT(rect->get_height()/2), 0 );
-  Clutter::Vertex anchor2( CLUTTER_UNITS_FROM_FLOAT(texture->get_width()/2), CLUTTER_UNITS_FROM_FLOAT(texture->get_height()/2), 0);
+  Clutter::Vertex anchor1( rect->get_width()/2, rect->get_height()/2, 0 );
+  Clutter::Vertex anchor2( texture->get_width()/2, texture->get_height()/2, 0);
   box2d->add_distance_joint(rect, texture, anchor1, anchor2, 200.0);
 
   box2d->property_gravity() = Clutter::Vertex(0, 0, 0);

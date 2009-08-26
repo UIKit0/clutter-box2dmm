@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     box2d->set_child_manipulatable(box, true);
     box2d->set_child_mode(box, Clutter::Box2D::BOX2D_DYNAMIC);
 
-    Clutter::Vertex anchor( CLUTTER_UNITS_FROM_FLOAT (20 + 20 * i), CLUTTER_UNITS_FROM_FLOAT (y), 0 );
+    Clutter::Vertex anchor(20 + 20 * i, y, 0 );
     box2d->add_revolute_joint(prev_actor, box, anchor);
    
     prev_actor = box;
@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 
   box2d->set_child_mode(box, Clutter::Box2D::BOX2D_STATIC);
 
-  Clutter::Vertex anchor( CLUTTER_UNITS_FROM_FLOAT (20 + 20 * num_planks), CLUTTER_UNITS_FROM_FLOAT (y), 0 );
+  Clutter::Vertex anchor( 20 + 20 * num_planks, y, 0 );
   box2d->add_revolute_joint(prev_actor, box, anchor);
 
   box2d->set_simulating();

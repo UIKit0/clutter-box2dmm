@@ -4,8 +4,8 @@ AC_INIT(clutter-box2d/clutter-box2dmm-config.h.in)
 #  Version and initialization
 #########################################################################
 CLUTTER_BOX2DMM_MAJOR_VERSION=0
-CLUTTER_BOX2DMM_MINOR_VERSION=7
-CLUTTER_BOX2DMM_MICRO_VERSION=4
+CLUTTER_BOX2DMM_MINOR_VERSION=9
+CLUTTER_BOX2DMM_MICRO_VERSION=1
 
 #
 # +1 : ? : +1  == new interface that does not break old one
@@ -72,8 +72,8 @@ AC_CHECK_PROGS(PERL, perl5 perl)
 #########################################################################
 
 PKG_CHECK_MODULES(CLUTTER_BOX2DMM,
-                  [cluttermm-0.8
-                   clutter-box2d-0.8])
+                  [cluttermm-0.9
+                   clutter-box2d-0.10])
 
 
 # the API version of the library.  Libraries and pkg-config files will have this

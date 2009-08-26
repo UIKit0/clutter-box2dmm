@@ -85,8 +85,8 @@ int main(int argc, char *argv[])
     box2d->set_child_manipulatable(box);
     box2d->set_child_mode(box, Clutter::Box2D::BOX2D_DYNAMIC);
 
-    Clutter::Vertex anchor1( CLUTTER_UNITS_FROM_FLOAT (18), CLUTTER_UNITS_FROM_FLOAT (0.0), 0 );
-    Clutter::Vertex anchor2( CLUTTER_UNITS_FROM_FLOAT (0.0), CLUTTER_UNITS_FROM_FLOAT (0.0), 0);
+    Clutter::Vertex anchor1( 0.0, 0 );
+    Clutter::Vertex anchor2( 0.0, 0.0, 0);
     box2d->add_revolute_joint(prev_actor, box, anchor1, anchor2, 0.0);
    
     prev_actor = box;
