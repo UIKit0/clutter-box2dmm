@@ -72,7 +72,7 @@ AC_CHECK_PROGS(PERL, perl5 perl)
 #########################################################################
 
 PKG_CHECK_MODULES(CLUTTER_BOX2DMM,
-                  [cluttermm-0.9
+                  [cluttermm-1.0
                    clutter-box2d-0.10])
 
 
