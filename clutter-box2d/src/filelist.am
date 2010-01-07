@@ -1,0 +1,11 @@
+files_defs = clutter-box2d.defs \
+			  clutter-box2d_methods.defs \
+			  clutter-box2d_signals.defs \
+			  clutter-box2d_enums.defs \
+			  clutter-box2d_vfuncs.defs \
+			  clutter-box2d_docs.xml \
+			  clutter-box2d_docs_override.xml
+files_hg = box2d.hg
+
+
+files_ccg = $(files_hg:.hg=.ccg)

@@ -15,17 +15,23 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-lib_LTLIBRARIES = libclutter-box2dmm-@CLUTTER_BOX2DMM_API_VERSION@.la
+AUTOMAKE_OPTIONS = subdir-objects
 
-include $(srcdir)/../src/filelist.am
-include $(srcdir)/filelist.am
-include $(top_srcdir)/build/compile-binding.am
+include $(srcdir)/m4/filelist.am
 
-local_cppflags = $(binding_includes) $(binding_cppflags) -DCLUTTER_BOX2DMM_BUILD=1
+dist_noinst_DATA = $(addprefix m4/,$(files_codegen_m4_private))
 
-AM_CPPFLAGS = $(local_cppflags) $(CLUTTER_BOX2DMM_CFLAGS)
+codegen_m4dir = $(datadir)/$(CLUTTER_BOX2DMM_MODULE_NAME)/proc/m4
+dist_codegen_m4_DATA = $(addprefix m4/,$(files_codegen_m4_public))
+
+noinst_PROGRAMS = extradefs/generate_extra_defs
+
+extradefs_generate_extra_defs_SOURCES = extradefs/generate_extra_defs_clutter_box2d.cc
+extradefs_generate_extra_defs_LDADD   = $(CLUTTER_BOX2DMM_LIBS) -lglibmm_generate_extra_defs-2.4
+
+AM_CPPFLAGS = -I$(top_builddir) $(CLUTTER_BOX2DMM_CFLAGS)
 AM_CXXFLAGS = $(CLUTTER_BOX2DMM_WXXFLAGS)
 
-libclutter_box2dmm_@CLUTTER_BOX2DMM_API_VERSION@_la_SOURCES = $(binding_sources)
-libclutter_box2dmm_@CLUTTER_BOX2DMM_API_VERSION@_la_LDFLAGS = -no-undefined -version-info $(CLUTTER_BOX2DMM_SO_VERSION)
-libclutter_box2dmm_@CLUTTER_BOX2DMM_API_VERSION@_la_LIBADD  = $(CLUTTER_BOX2DMM_LIBS)
+# Instruct GNU make to delete the targets of a rule after it failed, in
+# order to avoid the complication of handling that situation manually.
+.DELETE_ON_ERROR:

@@ -1,6 +1,6 @@
 ## Copyright (c) 2009  Openismus GmbH <http://www.openismus.com/>
 ##
-## This file is part of clutter-box2dmm.
+## This file is part of cluttermm.
 ##
 ## cluttermm is free software: you can redistribute it and/or modify it
 ## under the terms of the GNU Lesser General Public License as published
@@ -15,9 +15,12 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-binding_name    = clutter-box2dmm
-wrap_init_flags = --namespace=Clutter --namespace=Box2D --parent_dir=clutter-box2dmm
+include $(top_srcdir)/clutter-box2d/src/filelist.am
+include $(top_srcdir)/clutter-box2d/clutter-box2dmm/filelist.am
 
-include $(srcdir)/filelist.am
-include $(top_srcdir)/codegen/m4/filelist.am
-include $(top_srcdir)/build/generate-binding.am
+clutter_box2dmm_files_h = $(files_built_h) $(filter-out wrap_init.h,$(files_extra_h))
+
+book_name = $(CLUTTER_BOX2DMM_MODULE_NAME)
+doc_input = $(addprefix $(top_srcdir)/clutter-box2d/clutter-box2dmm/,$(clutter_box2dmm_files_h))
+
+include $(top_srcdir)/build/doc-reference.am

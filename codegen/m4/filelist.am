@@ -1,0 +1,7 @@
+## This file is part of clutter-box2dmm.
+
+files_codegen_m4_private = convert.m4
+files_codegen_m4_public  = convert_clutter-box2dmm.m4
+
+files_codegen_m4 = $(files_codegen_m4_private) $(files_codegen_m4_public)
+

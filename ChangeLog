@@ -1,3 +1,9 @@
+0.9.1:
+
+2010-01-07  Murray Cumming  <murrayc@murrayc.com>
+
+	Changed build to use mm-common, like cluttermm.
+
 2009-11-17  Murray Cumming  <murrayc@murrayc.com>
  
 	* configure.in: Use cluttermm-1.0 (not API/ABI stable though).

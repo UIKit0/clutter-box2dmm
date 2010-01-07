@@ -1,3 +1,15 @@
+0.9.1:
+
+* Use cluttermm-1.0 and Use clutter-box2d-0.10.
+* Box2d:
+  - add_distance_joint(): Added default values.
+  -  Added explicit get/set_child_*() methods for all the ClutterBox2D 
+     child properties.
+  -  Used Clutter::Vertex instead of ClutterVertex for all parameters.
+* Examples:
+  Added examples/distance_joint/ as a simple example of a distance joint.
+  (Murray Cumming)
+
 0.7.3:
 
 Initial version, with examples.
