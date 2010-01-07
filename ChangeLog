@@ -1,3 +1,7 @@
+2009-11-17  Murray Cumming  <murrayc@murrayc.com>
+ 
+	* configure.in: Use cluttermm-1.0 (not API/ABI stable though).
+
 2009-08-26  Murray Cumming  <murrayc@murrayc.com>
 
 	Use clutter-box2d-0.10.
