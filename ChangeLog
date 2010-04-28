@@ -1,3 +1,12 @@
+2010-04-28  David King  <davidk@openismus.com>
+
+	Add main page to Doxygen documentation
+
+	* doc/Makefile.am: Parse clutter-box2d/clutter-box2dmm.h for
+	documentation.
+	* clutter-box2d/clutter-box2dmm.h: Add main page to Doxygen
+	documentation.
+
 0.9.1:
 
 2010-01-07  Murray Cumming  <murrayc@murrayc.com>

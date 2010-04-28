@@ -21,6 +21,7 @@ include $(top_srcdir)/clutter-box2d/clutter-box2dmm/filelist.am
 clutter_box2dmm_files_h = $(files_built_h) $(filter-out wrap_init.h,$(files_extra_h))
 
 book_name = $(CLUTTER_BOX2DMM_MODULE_NAME)
-doc_input = $(addprefix $(top_srcdir)/clutter-box2d/clutter-box2dmm/,$(clutter_box2dmm_files_h))
+doc_input = $(addprefix $(top_srcdir)/clutter-box2d/clutter-box2dmm/,$(clutter_box2dmm_files_h)) \
+            $(top_srcdir)/clutter-box2d/clutter-box2dmm.h
 
 include $(top_srcdir)/build/doc-reference.am
