@@ -1,3 +1,15 @@
+0.9.2:
+
+2010-05-05  Murray Cumming  <murrayc@murrayc.com>
+
+	Slight documentation improvements.
+	
+	* clutter-box2d/clutter-box2dmm.h: Slightly improved main page text, linking 
+	to the Box2D class.
+	* clutter-box2d/src/box2d.hg: Added brief class documentation.
+	* clutter-box2d/src/clutter-box2d_methods.defs: Regenerated, though no change 
+	seems very significant.
+
 2010-04-28  David King  <davidk@openismus.com>
 
 	Add main page to Doxygen documentation

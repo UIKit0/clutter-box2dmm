@@ -1,3 +1,8 @@
+0.9.2:
+
+* Added main page documentation for doxygen.
+  (David King, Murray Cumming)
+  
 0.9.1:
 
 * Use cluttermm-1.0 and Use clutter-box2d-0.10.

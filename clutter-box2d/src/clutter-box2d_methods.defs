@@ -7,30 +7,33 @@
   (gtype-id "CLUTTER_TYPE_BOX2_D")
 )
 
-(define-object Box2DActor
+(define-object Box2DCollision
   (in-module "Clutter")
-  (parent "ClutterChildMeta")
-  (c-name "ClutterBox2DActor")
-  (gtype-id "CLUTTER_TYPE_BOX2_DACTOR")
+  (parent "GObject")
+  (c-name "ClutterBox2DCollision")
+  (gtype-id "CLUTTER_TYPE_BOX2_DCOLLISION")
 )
 
 ;; Enumerations and flags ...
 
 
-;; From clutter-box2d-actor.h
+;; From clutter-box2d-collision.h
 
-(define-method get_actor
-  (of-object "ClutterBox2D")
-  (c-name "clutter_box2d_get_actor")
-  (return-type "ClutterBox2DActor*")
-  (parameters
-    '("ClutterActor*" "actor")
-  )
+(define-function clutter_box2d_collision_get_type
+  (c-name "clutter_box2d_collision_get_type")
+  (return-type "GType")
 )
 
-(define-function clutter_box2d_actor_get_type
-  (c-name "clutter_box2d_actor_get_type")
-  (return-type "GType")
+
+
+;; From clutter-box2d-contact.h
+
+(define-function Result
+  (c-name "Result")
+  (return-type "none")
+  (parameters
+    '("const-b2ContactResult*" "point")
+  )
 )
 
 
@@ -127,7 +130,7 @@
   (return-type "ClutterBox2DJoint*")
   (parameters
     '("ClutterActor*" "actor")
-    '("ClutterVertex*" "target")
+    '("const-ClutterVertex*" "target")
   )
 )
 
@@ -145,6 +148,10 @@
   (c-name "clutter_box2d_joint_destroy")
   (return-type "none")
 )
+
+
+
+;; From clutter-box2d-marshal.h
 
 
 

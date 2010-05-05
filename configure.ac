@@ -15,7 +15,7 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AC_INIT([clutter-box2dmm], [0.9.1],
+AC_INIT([clutter-box2dmm], [0.9.2],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=clutter-box2dmm],
         [clutter-box2dmm], [http://www.gtkmm.org/])
 AC_PREREQ([2.59])
@@ -41,7 +41,7 @@ AC_DISABLE_STATIC
 AC_LIBTOOL_WIN32_DLL
 AC_PROG_LIBTOOL
 
-AC_SUBST([CLUTTER_BOX2DMM_MODULES], ['clutter-box2d-0.10 >= 0.10.0 cluttermm-1.0 >= 0.9.5'])
+AC_SUBST([CLUTTER_BOX2DMM_MODULES], ['clutter-box2d-0.10 >= 0.10.0 cluttermm-1.0 >= 0.9.6'])
 PKG_CHECK_MODULES([CLUTTER_BOX2DMM], [$CLUTTER_BOX2DMM_MODULES])
 MM_PKG_CONFIG_SUBST([GMMPROC_DIR], [--variable=gmmprocdir glibmm-2.4])
 

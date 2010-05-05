@@ -24,9 +24,8 @@
  *
  * @section description Description
  *
- * clutter-box2dmm is a C++ wrapper for clutter-box2d.
- *
- * See also the <a href="http://www.clutter-project.org/">clutter website</a>.
+ * clutter-box2dmm is a C++ wrapper for  <a href="http://www.clutter-project.org/">clutter-box2d</a>.
+ * See Clutter::Box2D::Box2D
  *
  * @section basics Basic Usage
  * Include the clutter-box2dmm header:

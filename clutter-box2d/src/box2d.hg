@@ -30,7 +30,7 @@ namespace Box2D
 
 _WRAP_ENUM(Type, ClutterBox2DType, NO_GTYPE)
 
-/** TODO: Documentation.
+/** This is a container that can physically simulate collisions between dynamic and static actors.
  * Use set_child_property() on the child actors.
  */
 class Box2D :
