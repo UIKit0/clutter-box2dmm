@@ -45,11 +45,12 @@ protected:
 public:
   _WRAP_CREATE()
 
-  _WRAP_METHOD(void set_simulating(bool simulating = true), clutter_box2d_set_simulating)
-  _WRAP_METHOD(bool get_simulating() const, clutter_box2d_get_simulating)
+  _WRAP_METHOD(void set_simulating(gboolean simulating = true), clutter_box2d_set_simulating)
+  // TODO: similar compile problem to below  _WRAP_METHOD(gboolean get_simulating() const, clutter_box2d_get_simulating)
 
   //TODO: Wrap ClutterBox2DJoint properly - ideally it would be a registered type, with hidden implementation.
 
+/* TODO: re-add these when the m4 macros are fixed to generate code that compiles
   _WRAP_METHOD(ClutterBox2DJoint* add_revolute_joint(const Glib::RefPtr<Clutter::Actor>& actor1, const Glib::RefPtr<Clutter::Actor>& actor2, const Clutter::Vertex& anchor1, const Clutter::Vertex& anchor2, double reference_angle), clutter_box2d_add_revolute_joint)
 
 
@@ -73,7 +74,7 @@ public:
 //TODO: Remove this conversion when the C API has been fixed. See http://bugzilla.o-hand.com/show_bug.cgi?id=1095
 #m4 _CONVERSION(`const Clutter::Vertex&', `ClutterVertex*', `const_cast<Clutter::Vertex&>($3).gobj()')
   _WRAP_METHOD(ClutterBox2DJoint* add_mouse_joint(const Glib::RefPtr<Clutter::Actor>& actor, const Clutter::Vertex& target), clutter_box2d_add_mouse_joint)
-
+*/
 
   void set_child_linear_velocity(const Glib::RefPtr<Clutter::Actor>& actor, const Clutter::Vertex& linear_velocity);
   Clutter::Vertex get_child_linear_velocity(const Glib::RefPtr<const Clutter::Actor>& actor) const;

@@ -15,7 +15,7 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AC_INIT([clutter-box2dmm], [0.9.2],
+AC_INIT([clutter-box2dmm], [0.12.1],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=clutter-box2dmm],
         [clutter-box2dmm], [http://www.gtkmm.org/])
 AC_PREREQ([2.59])
@@ -31,7 +31,7 @@ AM_MAINTAINER_MODE
 AC_ARG_VAR([ACLOCAL_FLAGS], [aclocal flags, e.g. -I <macro dir>])
 
 MM_PREREQ([0.8])
-MM_INIT_MODULE([clutter-box2dmm-0.10])
+MM_INIT_MODULE([clutter-box2dmm-0.12])
 
 # http://www.gnu.org/software/libtool/manual/html_node/Updating-version-info.html
 AC_SUBST([CLUTTER_BOX2DMM_SO_VERSION], [0:0:0])
@@ -41,7 +41,7 @@ AC_DISABLE_STATIC
 AC_LIBTOOL_WIN32_DLL
 AC_PROG_LIBTOOL
 
-AC_SUBST([CLUTTER_BOX2DMM_MODULES], ['clutter-box2d-0.10 >= 0.10.0 cluttermm-1.0 >= 0.9.6'])
+AC_SUBST([CLUTTER_BOX2DMM_MODULES], ['clutter-box2d-0.12 >= 0.12.0 cluttermm-1.0 >= 1.0.0'])
 PKG_CHECK_MODULES([CLUTTER_BOX2DMM], [$CLUTTER_BOX2DMM_MODULES])
 MM_PKG_CONFIG_SUBST([GMMPROC_DIR], [--variable=gmmprocdir glibmm-2.4])
 
