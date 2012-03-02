@@ -15,12 +15,15 @@
  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <cluttermm/group.h>
-#include <cluttermm/types.h> //For Clutter::Vertex.
-#include <clutter-box2d/clutter-box2d-joint.h>
+#include <cluttermm.h>
+#include <cluttermm/childmeta.h>
+#include <clutter-box2d.h>
+#include <clutter-box2d-child.h>
+#include <clutter-box2d-collision.h>
  
 _DEFS(clutter-box2dmm,clutter-box2d)
 _PINCLUDE(cluttermm/private/group_p.h)
+_PINCLUDE(cluttermm/private/childmeta_p.h)
 
 namespace Clutter
 {
@@ -29,6 +32,32 @@ namespace Box2D
 {
 
 _WRAP_ENUM(Type, ClutterBox2DType, NO_GTYPE)
+
+class Box2DCollision:
+  public Glib::Object
+{
+  _CLASS_GOBJECT(Box2DCollision, ClutterBox2DCollision, CLUTTER_BOX2D_COLLISION, Glib::Object, GObject)
+
+protected:
+  _CTOR_DEFAULT
+
+public:
+  _WRAP_CREATE()
+};
+
+class Box2DChild :
+  public Clutter::ChildMeta
+{
+  _CLASS_GOBJECT(Box2DChild, ClutterBox2DChild, CLUTTER_BOX2D_CHILD, Clutter::ChildMeta, ClutterChildMeta)
+
+protected:
+  _CTOR_DEFAULT
+
+public:
+  _WRAP_CREATE()
+  _WRAP_SIGNAL(void collision(const Glib::RefPtr<Clutter::Box2D::Box2DCollision> & c), "collision", no_default_handler)
+};
+
 
 /** This is a container that can physically simulate collisions between dynamic and static actors.
  * Use set_child_property() on the child actors.
@@ -44,6 +73,11 @@ protected:
 
 public:
   _WRAP_CREATE()
+
+// The clutter_box2d_get_child method is in 
+// #include "clutter-box2d-private.h"
+// and, therefore, cannot be wrapped.
+//  _WRAP_METHOD(const Glib::RefPtr<Clutter::Box2D::Box2DChild>& get_child(const Glib::RefPtr<Clutter::Actor>& actor), clutter_box2d_get_child)
 
   _WRAP_METHOD(void set_simulating(gboolean simulating = true), clutter_box2d_set_simulating)
   // TODO: similar compile problem to below  _WRAP_METHOD(gboolean get_simulating() const, clutter_box2d_get_simulating)
