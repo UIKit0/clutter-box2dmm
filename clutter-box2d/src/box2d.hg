@@ -43,6 +43,9 @@ protected:
 
 public:
   _WRAP_CREATE()
+
+  Glib::RefPtr<Clutter::Actor> get_actor1();
+  Glib::RefPtr<Clutter::Actor> get_actor2();
 };
 
 class Box2DChild :

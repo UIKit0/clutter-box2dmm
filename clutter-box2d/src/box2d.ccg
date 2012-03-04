@@ -22,6 +22,18 @@ namespace Clutter
 namespace Box2D
 {
 
+Glib::RefPtr<Clutter::Actor> Box2DCollision::get_actor1()
+{
+  Glib::RefPtr<Clutter::Actor> actor1 = Glib::wrap((this->gobj())->actor1, false);
+  return actor1;
+}
+
+Glib::RefPtr<Clutter::Actor> Box2DCollision::get_actor2()
+{
+  Glib::RefPtr<Clutter::Actor> actor2 = Glib::wrap((this->gobj())->actor2, false);
+  return actor2;
+}
+
 void Box2D::set_child_linear_velocity(const Glib::RefPtr<Clutter::Actor>& actor, const Clutter::Vertex& linear_velocity)
 {
   set_child_property(actor, "linear-velocity", linear_velocity);
