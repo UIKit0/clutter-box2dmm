@@ -2,10 +2,10 @@
 #include <clutter-box2dmm.h>
 #include <iostream>
 
-void
-handle_collision(const Glib::RefPtr<Clutter::Box2D::Box2DCollision> & c)
+static void
+handle_collision(const Glib::RefPtr<Clutter::Box2D::Box2DCollision>& c)
 {
-  std::cout << "Collision detected" << std::endl;
+  //  std::cout << "Collision detected with " << c->get_actor1() << std::endl;
 }
 
 static void
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     // uncommented in cluttermm. This depends on a clutter release with
     // clutter bug #1033 fixed.
     // initialize the C++ wrapper types
-    Clutter::init(&argc, &argv); //, context);
+    Clutter::Box2D::init(&argc, &argv); //, context);
   }
   catch(const Glib::Exception& ex)
   {
@@ -75,6 +75,7 @@ int main(int argc, char *argv[])
   box2d->add_actor(ground1);
   box2d->set_child_mode(ground1, Clutter::Box2D::BOX2D_STATIC);
 
+  Glib::RefPtr<Clutter::Box2D::Box2DCollision> col = Clutter::Box2D::Box2DCollision::create();
   Glib::RefPtr<Clutter::Box2D::Box2DChild> b2dchild = Glib::RefPtr<Clutter::Box2D::Box2DChild>::cast_static(box2d->get_child_meta(ground1)); 
   b2dchild->signal_collision().connect(sigc::ptr_fun(&handle_collision));
 

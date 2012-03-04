@@ -15,7 +15,7 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AC_INIT([clutter-box2dmm], [0.12.1],
+AC_INIT([clutter-box2dmm], [0.12.2],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=clutter-box2dmm],
         [clutter-box2dmm], [http://www.gtkmm.org/])
 AC_PREREQ([2.59])

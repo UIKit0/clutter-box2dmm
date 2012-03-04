@@ -1,3 +1,7 @@
+0.12.2:
+
+* Exposed the signal_collision of Box2DChild
+
 0.12.1:
 
 * Updated the bindings to build on clutter-box2d > 0.12
