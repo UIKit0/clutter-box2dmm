@@ -26,9 +26,9 @@
   </maintainer>
   <maintainer>
     <foaf:Person>
-      <foaf:name>Chris Kühl</foaf:name>
-      <foaf:mbox rdf:resource="mailto:blixtra@gmail.com" />
-      <gnome:userid>chriskuehl</gnome:userid>
+      <foaf:name>Krzesimir Nowak</foaf:name>
+      <foaf:mbox rdf:resource="mailto:qdlacz@gmail.com" />
+      <gnome:userid>krnowak</gnome:userid>
     </foaf:Person>
   </maintainer>
 
