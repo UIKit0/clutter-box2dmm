@@ -31,5 +31,12 @@
       <gnome:userid>krnowak</gnome:userid>
     </foaf:Person>
   </maintainer>
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Aidan Delaney</foaf:name>
+      <foaf:mbox rdf:resource="mailto:aidan@phoric.eu" />
+      <gnome:userid>adelaney</gnome:userid>
+    </foaf:Person>
+  </maintainer>
 
 </Project>
