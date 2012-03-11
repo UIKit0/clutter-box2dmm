@@ -6,5 +6,6 @@ _CONVERSION(`const Glib::RefPtr<Clutter::Box2D::Box2DChild>&',`ClutterBox2DChild
 
 _CONVERSION(`const Glib::RefPtr<Box2DCollision>&',`ClutterBox2DCollision*',__CONVERT_REFPTR_TO_P)
 _CONVERSION(`ClutterBox2DCollision*',`Glib::RefPtr<Box2DCollision>',`Glib::wrap($3)')
+_CONVERSION(`ClutterBox2DCollision*',`Glib::RefPtr<const Box2DCollision>',`Glib::wrap($3)')
 _CONVERSION(`ClutterBox2DCollision*',`const Glib::RefPtr<Clutter::Box2D::Box2DCollision>&',`Glib::wrap($3)')
 
