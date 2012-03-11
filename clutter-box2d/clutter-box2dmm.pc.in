@@ -5,7 +5,7 @@ includedir=@includedir@
 
 Name: clutter-box2dmm
 Description: C++ wrapper for clutter
-Requires: clutter-box2d-0.12 cluttermm-@API_VER@
+Requires: clutter-box2d-@CLUTTER_BOX2DMM_API_VERSION@ cluttermm-1.0
 Version: @VERSION@
-Libs: -L${libdir} -lclutter-box2dmm-@API_VER@
-Cflags: -I${includedir}/clutter-box2dmm-@API_VER@
+Libs: -L${libdir} -lclutter-box2dmm-@CLUTTER_BOX2DMM_API_VERSION@
+Cflags: -I${includedir}/clutter-box2dmm-@CLUTTER_BOX2DMM_API_VERSION@
