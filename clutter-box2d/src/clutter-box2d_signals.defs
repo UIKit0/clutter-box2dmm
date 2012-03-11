@@ -1,325 +1,10 @@
 ;; From ClutterBox2D
 
-(define-property name
-  (of-object "ClutterBox2D")
-  (prop-type "GParamString")
-  (docs "Name of the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property x
-  (of-object "ClutterBox2D")
-  (prop-type "GParamInt")
-  (docs "X coordinate of the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property y
-  (of-object "ClutterBox2D")
-  (prop-type "GParamInt")
-  (docs "Y coordinate of the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property width
-  (of-object "ClutterBox2D")
-  (prop-type "GParamInt")
-  (docs "Width of the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property height
-  (of-object "ClutterBox2D")
-  (prop-type "GParamInt")
-  (docs "Height of the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property fixed-x
-  (of-object "ClutterBox2D")
-  (prop-type "ClutterParamSpecUnit")
-  (docs "Forced X position of the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property fixed-y
-  (of-object "ClutterBox2D")
-  (prop-type "ClutterParamSpecUnit")
-  (docs "Forced Y position of the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property fixed-position-set
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether to use fixed positioning for the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property min-width
-  (of-object "ClutterBox2D")
-  (prop-type "ClutterParamSpecUnit")
-  (docs "Forced minimum width request for the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property min-width-set
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether to use the min-width property")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property min-height
-  (of-object "ClutterBox2D")
-  (prop-type "ClutterParamSpecUnit")
-  (docs "Forced minimum height request for the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property min-height-set
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether to use the min-height property")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property natural-width
-  (of-object "ClutterBox2D")
-  (prop-type "ClutterParamSpecUnit")
-  (docs "Forced natural width request for the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property natural-width-set
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether to use the natural-width property")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property natural-height
-  (of-object "ClutterBox2D")
-  (prop-type "ClutterParamSpecUnit")
-  (docs "Forced natural height request for the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property natural-height-set
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether to use the natural-height property")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property request-mode
-  (of-object "ClutterBox2D")
-  (prop-type "GParamEnum")
-  (docs "The actor's request mode")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property allocation
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoxed")
-  (docs "The actor's allocation")
-  (readable #t)
-  (writable #f)
-  (construct-only #f)
-)
-
-(define-property depth
-  (of-object "ClutterBox2D")
-  (prop-type "GParamInt")
-  (docs "Depth of actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property clip
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoxed")
-  (docs "The clip region for the actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property has-clip
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether the actor has a clip set or not")
-  (readable #t)
-  (writable #f)
-  (construct-only #f)
-)
-
-(define-property opacity
-  (of-object "ClutterBox2D")
-  (prop-type "GParamUChar")
-  (docs "Opacity of actor")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property visible
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether the actor is visible or not")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property reactive
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether the actor is reactive to events or not")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property scale-x
-  (of-object "ClutterBox2D")
-  (prop-type "GParamDouble")
-  (docs "Scale factor on the X axis")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property scale-y
-  (of-object "ClutterBox2D")
-  (prop-type "GParamDouble")
-  (docs "Scale factor on the Y axis")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property rotation-angle-x
-  (of-object "ClutterBox2D")
-  (prop-type "GParamDouble")
-  (docs "The rotation angle on the X axis")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property rotation-angle-y
-  (of-object "ClutterBox2D")
-  (prop-type "GParamDouble")
-  (docs "The rotation angle on the Y axis")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property rotation-angle-z
-  (of-object "ClutterBox2D")
-  (prop-type "GParamDouble")
-  (docs "The rotation angle on the Z axis")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property rotation-center-x
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoxed")
-  (docs "The rotation center on the X axis")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property rotation-center-y
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoxed")
-  (docs "The rotation center on the Y axis")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property rotation-center-z
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoxed")
-  (docs "The rotation center on the Z axis")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property anchor-x
-  (of-object "ClutterBox2D")
-  (prop-type "GParamInt")
-  (docs "X coordinate of the anchor point")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property anchor-y
-  (of-object "ClutterBox2D")
-  (prop-type "GParamInt")
-  (docs "Y coordinate of the anchor point")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
-(define-property show-on-set-parent
-  (of-object "ClutterBox2D")
-  (prop-type "GParamBoolean")
-  (docs "Whether the actor is shown when parented")
-  (readable #t)
-  (writable #t)
-  (construct-only #f)
-)
-
 (define-property gravity
   (of-object "ClutterBox2D")
   (prop-type "GParamBoxed")
   (docs "The gravity of ")
-  (readable #f)
+  (readable #t)
   (writable #t)
   (construct-only #f)
 )
@@ -328,6 +13,145 @@
   (of-object "ClutterBox2D")
   (prop-type "GParamBoolean")
   (docs "Whether ClutterBox2D is performing physical simulation or not.")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property scale-factor
+  (of-object "ClutterBox2D")
+  (prop-type "GParamFloat")
+  (docs "The scaling factor of pixels to world units")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property time-step
+  (of-object "ClutterBox2D")
+  (prop-type "GParamFloat")
+  (docs "The amount of time simulated in a physics step, in milliseconds")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property iterations
+  (of-object "ClutterBox2D")
+  (prop-type "GParamFloat")
+  (docs "The amount of iterations in a physics step")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property simulate-inactive
+  (of-object "ClutterBox2D")
+  (prop-type "GParamBoolean")
+  (docs "Whether to simulate inactive bodies")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From ClutterBox2DCollision
+
+;; From ClutterBox2DChild
+
+(define-signal collision
+  (of-object "ClutterBox2DChild")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("ClutterBox2DCollision*" "p0")
+  )
+)
+
+(define-property is-bullet
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamBoolean")
+  (docs "Whether this object is a bullet (fast moving object that should not be allowed tunneling through other dynamic objects.)")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property is-circle
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamBoolean")
+  (docs "Whether this object is a circle instead of a rectangle.")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property outline
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamValueArray")
+  (docs "ClutterVertex array describing the outline of the shape.")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property density
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamFloat")
+  (docs "Density")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property friction
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamFloat")
+  (docs "Friction")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property restitution
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamFloat")
+  (docs "Restitution")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property linear-velocity
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamBoxed")
+  (docs "Linear velocity")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property angular-velocity
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamFloat")
+  (docs "Angular velocity")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property mode
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamInt")
+  (docs "The mode of the actor (none, static or dynamic)")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property manipulatable
+  (of-object "ClutterBox2DChild")
+  (prop-type "GParamBoolean")
+  (docs "Whether the user is able to interact (using a pointer device) with this actor or not.)")
   (readable #t)
   (writable #t)
   (construct-only #f)

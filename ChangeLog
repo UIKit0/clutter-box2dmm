@@ -1,3 +1,8 @@
+0.12.2:
+	
+2012-03-04 Aidan Delaney <aidan@phoric.eu>
+	Updated bindings so that collision signal is exposed.
+	
 0.12.1:
 
 2012-02-22 Aidan Delaney <aidan@phoric.eu>

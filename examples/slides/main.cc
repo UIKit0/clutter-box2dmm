@@ -3,6 +3,12 @@
 #include <iostream>
 
 static void
+handle_collision(const Glib::RefPtr<Clutter::Box2D::Box2DCollision>& c)
+{
+  //  std::cout << "Collision detected with " << c->get_actor1() << std::endl;
+}
+
+static void
 add_static_box(const Glib::RefPtr<Clutter::Box2D::Box2D>& box2d,
                 int x, int y, int width, int height)
 {
@@ -42,7 +48,7 @@ int main(int argc, char *argv[])
     // uncommented in cluttermm. This depends on a clutter release with
     // clutter bug #1033 fixed.
     // initialize the C++ wrapper types
-    Clutter::init(&argc, &argv); //, context);
+    Clutter::Box2D::init(&argc, &argv); //, context);
   }
   catch(const Glib::Exception& ex)
   {
@@ -58,7 +64,6 @@ int main(int argc, char *argv[])
 
   Glib::RefPtr<Clutter::Box2D::Box2D> box2d = Clutter::Box2D::Box2D::create();
   stage->add_actor(box2d);
-  
 
   add_cage(box2d, false /* no roof */);
 
@@ -69,6 +74,10 @@ int main(int argc, char *argv[])
   ground1->set_rotation(Clutter::Z_AXIS, 30.0, 128, 16, 0);
   box2d->add_actor(ground1);
   box2d->set_child_mode(ground1, Clutter::Box2D::BOX2D_STATIC);
+
+  Glib::RefPtr<Clutter::Box2D::Box2DCollision> col = Clutter::Box2D::Box2DCollision::create();
+  Glib::RefPtr<Clutter::Box2D::Box2DChild> b2dchild = Glib::RefPtr<Clutter::Box2D::Box2DChild>::cast_static(box2d->get_child_meta(ground1)); 
+  b2dchild->signal_collision().connect(sigc::ptr_fun(&handle_collision));
 
   Glib::RefPtr<Clutter::Rectangle> ground2 = Clutter::Rectangle::create();
   ground2->set_size(256, 3);

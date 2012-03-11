@@ -15,7 +15,7 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AC_INIT([clutter-box2dmm], [0.12.1],
+AC_INIT([clutter-box2dmm], [0.12.2],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=clutter-box2dmm],
         [clutter-box2dmm], [http://www.gtkmm.org/])
 AC_PREREQ([2.59])
@@ -44,6 +44,7 @@ AC_PROG_LIBTOOL
 AC_SUBST([CLUTTER_BOX2DMM_MODULES], ['clutter-box2d-0.12 >= 0.12.0 cluttermm-1.0 >= 1.0.0'])
 PKG_CHECK_MODULES([CLUTTER_BOX2DMM], [$CLUTTER_BOX2DMM_MODULES])
 MM_PKG_CONFIG_SUBST([GMMPROC_DIR], [--variable=gmmprocdir glibmm-2.4])
+MM_PKG_CONFIG_SUBST([GMMPROC_EXTRA_M4_DIR], [--variable=gmmprocm4dir pangomm-1.4 atkmm-1.6 cluttermm-1.0])
 
 MM_ARG_ENABLE_DOCUMENTATION
 MM_ARG_WITH_TAGFILE_DOC([libstdc++.tag], [mm-common-libstdc++])

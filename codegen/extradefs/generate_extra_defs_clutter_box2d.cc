@@ -27,6 +27,8 @@ int main (int argc, char *argv[])
 
   std::cout 
     << get_defs(CLUTTER_TYPE_BOX2D)
+    << get_defs(CLUTTER_TYPE_BOX2D_COLLISION)
+    << get_defs(CLUTTER_TYPE_BOX2D_CHILD)
     ;
 
   return 0;

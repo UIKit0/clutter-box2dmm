@@ -168,3 +168,236 @@
 )
 
 
+;; From clutter-box2d-private.h
+
+(define-method get_child
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_get_child")
+  (return-type "ClutterBox2DChild*")
+  (parameters
+    '("ClutterActor*" "actor")
+  )
+)
+;; -*- scheme -*-
+; object definitions ...
+(define-object ChildMeta
+  (in-module "Clutter")
+  (parent "GObject")
+  (c-name "ClutterChildMeta")
+  (gtype-id "CLUTTER_TYPE_CHILD_META")
+)
+
+;; Enumerations and flags ...
+;; -*- scheme -*-
+; object definitions ...
+(define-object Box2DChild
+  (in-module "Clutter")
+  (parent "ClutterChildMeta")
+  (c-name "ClutterBox2DChild")
+  (gtype-id "CLUTTER_TYPE_BOX2_DCHILD")
+)
+
+;; Enumerations and flags ...
+
+
+;; From clutter-box2d-child.h
+
+(define-function clutter_box2d_child_get_type
+  (c-name "clutter_box2d_child_get_type")
+  (return-type "GType")
+)
+
+(define-method child_set_is_bullet
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_is_bullet")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("gboolean" "is_bullet")
+  )
+)
+
+(define-method child_get_is_bullet
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_is_bullet")
+  (return-type "gboolean")
+  (parameters
+    '("ClutterActor*" "child")
+  )
+)
+
+(define-method child_set_is_circle
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_is_circle")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("gboolean" "is_circle")
+  )
+)
+
+(define-method child_get_is_circle
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_is_circle")
+  (return-type "gboolean")
+  (parameters
+    '("ClutterActor*" "child")
+  )
+)
+
+(define-method child_set_outline
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_outline")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("const-ClutterVertex*" "outline")
+    '("guint" "n_vertices")
+  )
+)
+
+(define-method child_get_outline
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_outline")
+  (return-type "const-ClutterVertex*")
+  (parameters
+    '("ClutterActor*" "child")
+    '("guint*" "n_vertices")
+  )
+)
+
+(define-method child_set_density
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_density")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("gfloat" "density")
+  )
+)
+
+(define-method child_get_density
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_density")
+  (return-type "gfloat")
+  (parameters
+    '("ClutterActor*" "child")
+  )
+)
+
+(define-method child_set_friction
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_friction")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("gfloat" "friction")
+  )
+)
+
+(define-method child_get_friction
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_friction")
+  (return-type "gfloat")
+  (parameters
+    '("ClutterActor*" "child")
+  )
+)
+
+(define-method child_set_restitution
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_restitution")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("gfloat" "restitution")
+  )
+)
+
+(define-method child_get_restitution
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_restitution")
+  (return-type "gfloat")
+  (parameters
+    '("ClutterActor*" "child")
+  )
+)
+
+(define-method child_set_linear_velocity
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_linear_velocity")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("const-ClutterVertex*" "velocity")
+  )
+)
+
+(define-method child_get_linear_velocity
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_linear_velocity")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("ClutterVertex*" "velocity")
+  )
+)
+
+(define-method child_set_angular_velocity
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_angular_velocity")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("gfloat" "velocity")
+  )
+)
+
+(define-method child_get_angular_velocity
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_angular_velocity")
+  (return-type "gfloat")
+  (parameters
+    '("ClutterActor*" "child")
+  )
+)
+
+(define-method child_set_mode
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_mode")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("ClutterBox2DType" "mode")
+  )
+)
+
+(define-method child_get_mode
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_mode")
+  (return-type "ClutterBox2DType")
+  (parameters
+    '("ClutterActor*" "child")
+  )
+)
+
+(define-method child_set_manipulatable
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_set_manipulatable")
+  (return-type "none")
+  (parameters
+    '("ClutterActor*" "child")
+    '("gboolean" "manipulatable")
+  )
+)
+
+(define-method child_get_manipulatable
+  (of-object "ClutterBox2D")
+  (c-name "clutter_box2d_child_get_manipulatable")
+  (return-type "gboolean")
+  (parameters
+    '("ClutterActor*" "child")
+  )
+)
+
+
