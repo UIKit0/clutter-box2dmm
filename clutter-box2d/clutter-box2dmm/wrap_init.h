@@ -24,8 +24,9 @@
 
 namespace Clutter
 {
-
+  namespace Box2D {
 void wrap_init();
+  }
 
 } //namespace Clutter
 

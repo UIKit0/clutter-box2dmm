@@ -30,7 +30,7 @@ namespace Box2D
 void init(int* nargs, gchar **args[])
 {
   Clutter::init(nargs, args);
-  wrap_init(); //Tells the Glib::wrap() table about the libclutter-box2dmm classes.
+  Clutter::Box2D::wrap_init(); //Tells the Glib::wrap() table about the libclutter-box2dmm classes.
 }
 
 } //namespace Box2D
