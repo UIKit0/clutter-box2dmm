@@ -5,7 +5,7 @@
 static void
 handle_collision(const Glib::RefPtr<Clutter::Box2D::Box2DCollision>& c)
 {
-  //  std::cout << "Collision detected with " << c->get_actor1() << std::endl;
+  std::cout << "Collision detected between " << c->get_actor1()->get_type() << " and " << c->get_actor2()->get_type() << std::endl;
 }
 
 static void
