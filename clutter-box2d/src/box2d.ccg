@@ -24,13 +24,13 @@ namespace Box2D
 
 Glib::RefPtr<Clutter::Actor> Box2DCollision::get_actor1()
 {
-  Glib::RefPtr<Clutter::Actor> actor1 = Glib::wrap((this->gobj())->actor1, false);
+  Glib::RefPtr<Clutter::Actor> actor1 = Glib::wrap((this->gobj())->actor1, true);
   return actor1;
 }
 
 Glib::RefPtr<Clutter::Actor> Box2DCollision::get_actor2()
 {
-  Glib::RefPtr<Clutter::Actor> actor2 = Glib::wrap((this->gobj())->actor2, false);
+  Glib::RefPtr<Clutter::Actor> actor2 = Glib::wrap((this->gobj())->actor2, true);
   return actor2;
 }
 
