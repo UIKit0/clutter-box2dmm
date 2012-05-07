@@ -70,6 +70,18 @@ bool Box2D::get_child_is_bullet(const Glib::RefPtr<const Clutter::Actor>& actor)
   return is_bullet;
 }
 
+void Box2D::set_child_is_fixed_rotation(const Glib::RefPtr<Clutter::Actor>& actor, bool is_fixed_rotation)
+{
+  set_child_property(actor, "is-fixed-rotation", is_fixed_rotation); 
+}
+
+bool Box2D::get_child_is_fixed_rotation(const Glib::RefPtr<const Clutter::Actor>& actor) const
+{
+  bool is_fixed_rotation = false;
+  get_child_property(actor, "is-fixed-rotation", is_fixed_rotation);
+  return is_fixed_rotation;
+}
+
 void Box2D::set_child_mode(const Glib::RefPtr<Clutter::Actor>& actor, Type mode)
 {
   set_child_property(actor, "mode", (int)mode);  //TODO: Avoid the need for the int cast. 
